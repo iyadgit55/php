@@ -1,14 +1,25 @@
-<html>
-<body>
-<form action="GetDemo.php" method="get">
-Name	:<input type="text" name="name"><br>
-E-Mail	:<input type="text" name="email"><br>
-<input type="submit">
-</form>
-</body>
-</html>
-PHP File
 <?php
-echo "Hi ",$_GET['name'], "<br>";
-echo "Your email address is:" , $_GET['email']; 
+    class Person 
+    {
+        private $fname;
+        private $lname;
+        public function __construct($fname, $lname) 
+        {
+            echo "\nInitialising the object..."; 
+            $this->fname = $fname;
+            $this->lname = $lname;
+        }
+        public function __destruct()
+        {
+            echo "\n\nDestroying Object...\n";
+        }
+        public function showName() 
+        {
+            echo "\n\tMy name is: " . $this->fname . " " . $this->lname; 
+        }
+    }    
+    $fname=readline("Enter the first name: ");
+    $lname=readline("Enter the last name: ");
+    $p = new Person($fname, $lname);
+    $p->showName();    
 ?>
