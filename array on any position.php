@@ -1,25 +1,13 @@
 <?php
-class Person 
-{
-    private $fname;
-    private $lname;
-    public function __construct($fname, $lname) 
-    {
-        echo "\nInitializing the object..."; 
-        $this->fname = $fname;
-        $this->lname = $lname;
-    }
-    public function __destruct()
-    {
-        echo "\n\nDestroying Object...\n";
-    }
-    public function showName() 
-    {
-        echo "\n\tMy name is: " . $this->fname . " " . $this->lname; 
-    }
-}    
-$fname = "John";
-$lname = "Doe";
-$p = new Person($fname, $lname);
-$p->showName();    
+$arr = array(1, 2, 3, 4, 5);
+echo "\nArray before inserting new element: ";
+foreach ($arr as $x)
+    echo "$x ";
+echo "\n";
+$value =(int)readline("Enter the New Value to be inserted: ");
+$pos =(int)readline("Enter the Position to be inserted: ");
+array_splice($arr, $pos, 0, $value);
+echo "\nArray after inserting new element: ";
+foreach ($arr as $x) 
+    echo "$x ";
 ?>
